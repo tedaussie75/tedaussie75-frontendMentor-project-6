@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white-background: hsl(0, 0%, 100%);
+    --box-shadow-color: hsl(221, 100%, 96%);
+    --result-gradient : hsl(241, 81%, 54%);
+    --button-background: hsl(224, 30%, 27%);
+    --light-red: hsla(0, 100%, 67%);
+    --light-orangey: hsla(39, 100%, 56%);
+    --light-green: hsl(166, 100%, 37%);
+    --light-blue: hsl(234, 85%, 45%);
+    --background-badge-1: hsla(0, 100%, 67%, 0.100);
+    --background-badge-2: hsla(39, 100%, 56%, 0.100);
+    --background-badge-3: hsl(166, 100%, 37%, 0.100);
+    --background-badge-4: hsl(234, 85%, 45%, 0.100);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--white-background);
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 18px;
+}
+
+div.result-card {
+    display: flex;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0px 7px 22px 7px var(--box-shadow-color);
+}
+
+div.result-card section.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    flex: 1;
+    border-radius: 20px;
+    background-image: linear-gradient(180deg, hsla(251, 97%, 62%, 1),  hsl(241, 81%, 54%) 100%);
+}
+
+div.result-card section.result .result-title,
+div.result-card section.result .result-score span:last-of-type,
+div.result-card section.result .result-grade-text,
+div.result-card section.summary .summary-badge p:last-child span {
+    color: #9aa3ac;
+}
+
+div.result-card section.result .result-title {
+    font-size: 20px;
+}
+
+div.result-card section.result .result-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin: 30px 0;
+    line-height: 1;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, rgb(77, 48, 206) 0%, rgba(41, 38, 206, 0.604) 80%, rgba(0,212,255,0) 100%);
+    border-bottom: none;
+}
+
+div.result-card section.result .result-score span:first-child {
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+div.result-card section.result .result-score span:last-child {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+div.result-card section.result .result-grade {
+    color: white;
+    font-size: 27px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+div.result-card section.result .result-grade-text {
+    text-align: center;
+    font-size: 17px;
+}
+
+div.result-card section.summary {
+    padding: 30px;
+    flex: 1;
+}
+
+div.result-card section.summary h2 {
+    margin-bottom: 25px;
+    color: var(--button-background);
+}
+
+div.result-card section.summary .summary-badge {
+    display: flex;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+div.result-card section.summary .summary-badge p:last-child strong {
+    color: var(--button-background);
+}
+
+div.result-card section.summary .summary-badge .skills {
+    display: flex;
+    margin-right: auto;
+}
+
+div.result-card section.summary .summary-badge .skills img {
+    width: 15px;
+    margin-right: 7px;
+}
+
+div.result-card section.summary .summary-badge .skills p{
+    font-size: 17px;
+}
+
+div.result-card section.summary button {
+    margin-top: 25px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--button-background);
+    color: var(--white-background);
+    cursor: pointer;
+}
+
+div.result-card section.summary .summary-badge:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+div.result-card section.summary .summary-badge:nth-child(2) {
+    background-color: var(--background-badge-1);
+}
+
+div.result-card section.summary .summary-badge:nth-child(2) .skills {
+    color: var(--light-red);
+}
+
+div.result-card section.summary .summary-badge:nth-child(3) {
+    background-color: var(--background-badge-2);
+}
+
+div.result-card section.summary .summary-badge:nth-child(3) .skills {
+    color: var(--light-orangey);
+}
+
+div.result-card section.summary .summary-badge:nth-child(4) {
+    background-color: var(--background-badge-3);
+}
+
+div.result-card section.summary .summary-badge:nth-child(4) .skills {
+    color: var(--light-green);
+}
+
+div.result-card section.summary .summary-badge:nth-child(5) {
+    background-color: var(--background-badge-4);
+}
+
+div.result-card section.summary .summary-badge:nth-child(5) .skills {
+    color: var(--light-blue);
+}
+
+.attribution { font-size: 11px; text-align: center; margin-top: 50px;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 700px) {
+    div.result-card {
+        flex-direction: column;
+        margin: 30px;
+    }
+}
